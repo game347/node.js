@@ -1,0 +1,16 @@
+{
+  "name": "for_study_webdev",
+  "version": "1.0.0",
+  "main": "backend_start.js",
+  "scripts": {
+    "start": "node backend_start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.2",
+    "uuid": "^11.0.5"
+  }
+}
