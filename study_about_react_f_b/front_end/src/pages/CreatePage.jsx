@@ -6,17 +6,34 @@ const CreatePage = () => {
   const [newProduct, setNewProduct] = useState({
     name: "",
     price: "",
-    Image: ""
+    image: ""
   });
 
-  const toast = useToast()
-  const {createProduct}=useProductStore()
+  const toast = useToast();
+  const {createProduct}=useProductStore();
 
-  const handleAddProduct = async() => {
-     const {success,message} = await createProduct(newProduct)
-     console.log("Success:",success)
-     console.log("Message:",message)
+  const handleAddProduct = async () => {
+    const { success, message } = await createProduct(newProduct);
+    
+    if (!success) {
+      toast({
+        title: "ERROR",
+        description: message,
+        status: "error", // Correct status for error
+        duration: 5000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: "SUCCESS", // Fixed typo here
+        description: message,
+        status: "success", // Correct status for success
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
+  
 
   return <Container maxW={"container.sm"}>CreatePage
     <VStack spacing={8}>
